@@ -41,7 +41,7 @@ const questions = [
         optionB: "Mary Linton",
         optionC: "Edgar Ross",
         optionD: "Kieran Duffy",
-        correctOption: "optionD"
+        correctOption: "optionB"
     },
 
     {
@@ -226,3 +226,125 @@ const questions = [
     }
 
 ]
+
+let randomQuestions = [] 
+
+const sortQuestions = () => { 
+    while (randomQuestions.length <= 9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!randomQuestions.includes(random)) {
+            randomQuestions.push(random)
+        }
+    }
+}
+
+
+let questionNumber = 1
+let playerScore = 0 
+let wrongAttempt = 0 
+let indexNumber = 0
+
+const NextQuestion = (index) => {
+    sortQuestions()
+    const currentQuestion = randomQuestions[index]
+    /*document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore*/
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+}
+
+
+const checkAnswer = () => {
+    const currentQuestion = randomQuestions[indexNumber] 
+    const currentQuestionAnswer = currentQuestion.correctOption 
+    const options = document.getElementsByName("option"); 
+    let correctOption = null
+
+    options.forEach((option) => {
+        if (option.value === currentQuestionAnswer) {
+            //get's correct's button input with correct answer
+            correctOption = option.labels[0].id
+        }
+    })
+
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+
+    options.forEach((option) => {
+        if (option.checked === true && option.value === currentQuestionAnswer) {
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            playerScore++ 
+            indexNumber++ 
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+
+        else if (option.checked && option.value !== currentQuestionAnswer) {
+            const wrongLabelId = option.labels[0].id
+            document.getElementById(wrongLabelId).style.backgroundColor = "red"
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            wrongAttempt++ 
+            indexNumber++
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+    })
+}
+
+
+const handleNextQuestion = () => {
+    checkAnswer() 
+    unCheckbuttonButtons()
+    setTimeout(() => {
+        if (indexNumber <= 9) {
+
+            NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+        }
+        resetOptionBackground()
+    }, 1000);
+}
+
+const resetOptionBackground = () => {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+
+const unCheckbuttonButtons = () => {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+
+const handleEndGame = () => {
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt
+    document.getElementById('right-answers').innerHTML = playerScore
+    document.getElementById('score-modal').style.display = "flex"
+
+}
+
+const closeScoreModal = () => {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    randomQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+
+const closeOptionModal = () => {
+    document.getElementById('option-modal').style.display = "none"}

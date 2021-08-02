@@ -5,8 +5,91 @@
        <title>Trivia</title>
 
        <link rel="stylesheet" href="stylesheet.css">
-       <script src="trivia.js"></script>
+
     </head>
     <body>
+
+        <h1 class = heading1> &star; Red Dead Redemption 2 &star; </h1>
+
+        <div class = container1>
+            <div><a href="https://www.youtube.com/watch?v=eaW0tYpxyp0">Trailer</a></div>
+            <div><a href="https://www.rockstargames.com/reddeadredemption2/restricted-content/agegate/form?redirect=https%3A%2F%2Fwww.rockstargames.com%2Freddeadredemption2%2F&options=&locale=en_us">Rockstar Games</a></div>
+            <div><a href="https://www.github.com/lindseyfitzgerald">GitHub</a></div>
+            <div><a href="https://www.ign.com/wikis/red-dead-redemption-2/Walkthrough">Walkthrough</a></div>
+        </div>
+
+        <br>
+
+        <img src="https://guides.gamepressure.com/gfx/logos/980x360/980_403838750.jpg" alt="Red Dead Redemption 2 cover image" class="center">   
+        
+        <h2 class = heading2>Welcome to Red Dead Redemption 2 Trivia Page.</h2>
+    <body onload="NextQuestion(0)">
+       
+        <div class="game-quiz-container">
+        
+            <div class="game-details-container">
+            </div>
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+               <div class="modal-container" id="option-modal">
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+            </div>
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    <script src="trivia.js"></script>
+    </body>
+    <div class="modal-container" id="score-modal">
+
+        <div class="modal-content-container">
+
+            <h1>Quiz Completed.</h1>
+
+            <div class="grade-details">
+                <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                <p>Right Answers : <span id="right-answers"></span></p>
+            </div>
+
+            <div class="modal-button-container">
+                <button onclick="closeScoreModal()">Continue</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row:after"></div>
+        <div class=quote>
+        <blockquote><b><i>"We're theives, in a world that don't want us no more" - Arthur Morgan</i></b></blockquote>
+        </div>
     </body>
 </html>
