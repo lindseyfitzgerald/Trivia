@@ -17,28 +17,23 @@
             <div><a href="https://www.github.com/lindseyfitzgerald">GitHub</a></div>
             <div><a href="https://www.ign.com/wikis/red-dead-redemption-2/Walkthrough">Walkthrough</a></div>
         </div>
-
         <br>
-
         <img src="https://guides.gamepressure.com/gfx/logos/980x360/980_403838750.jpg" alt="Red Dead Redemption 2 cover image" class="center">   
-        
         <h2 class = heading2>Welcome to Red Dead Redemption 2 Trivia Page.</h2>
     <body onload="NextQuestion(0)">
-       
-        <div class="game-quiz-container">
-        
-            <div class="game-details-container">
+        <div class="gameQuizContainer">
+            <div class="gameDetailsContainer">
             </div>
-            <div class="game-question-container">
-                <h1 id="display-question"></h1>
+            <div class="gameQuestionContainer">
+                <h1 id="displayQuestion"></h1>
             </div>
 
-            <div class="game-options-container">
-               <div class="modal-container" id="option-modal">
-                    <div class="modal-content-container">
+            <div class="gameOptionsContainer">
+               <div class="modalContainer" id="option-modal">
+                    <div class="modalContentContainer">
                          <h1>Please Pick An Option</h1>
 
-                         <div class="modal-button-container">
+                         <div class="modalButtonContainer">
                             <button onclick="closeOptionModal()">Continue</button>
                         </div>
 
@@ -46,41 +41,41 @@
 
                </div>
                 <span>
-                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
-                    <label for="option-one" class="option" id="option-one-label"></label>
+                    <input type="radio" id="optionOne" name="option" class="radio" value="optionA" />
+                    <label for="optionOne" class="option" id="optionOneLabel"></label>
                 </span>
                 <span>
-                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
-                    <label for="option-two" class="option" id="option-two-label"></label>
+                    <input type="radio" id="optionTwo" name="option" class="radio" value="optionB" />
+                    <label for="optionTwo" class="option" id="optionTwoLabel"></label>
                 </span>
                 <span>
-                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
-                    <label for="option-three" class="option" id="option-three-label"></label>
+                    <input type="radio" id="optionThree" name="option" class="radio" value="optionC" />
+                    <label for="optionThree" class="option" id="optionThreeLabel"></label>
                 </span>
                 <span>
-                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
-                    <label for="option-four" class="option" id="option-four-label"></label>
+                    <input type="radio" id="optionFour" name="option" class="radio" value="optionD" />
+                    <label for="optionFour" class="option" id="optionFourLabel"></label>
                 </span>
             </div>
-            <div class="next-button-container">
+            <div class="nextButtonContainer">
                 <button onclick="handleNextQuestion()">Next Question</button>
             </div>
 
         </div>
     <script src="trivia.js"></script>
-    </body>
-    <div class="modal-container" id="score-modal">
+    
+    <div class="modalContainer" id="scoreModal">
 
-        <div class="modal-content-container">
+        <div class="modalContentContainer">
 
             <h1>Quiz Completed.</h1>
 
             <div class="grade-details">
-                <p>Wrong Answers : <span id="wrong-answers"></span></p>
-                <p>Right Answers : <span id="right-answers"></span></p>
+                <p>Wrong Answers : <span id="wrongAnswers"></span></p>
+                <p>Right Answers : <span id="rightAnswers"></span></p>
             </div>
 
-            <div class="modal-button-container">
+            <div class="modalButtonContainer">
                 <button onclick="closeScoreModal()">Continue</button>
             </div>
 

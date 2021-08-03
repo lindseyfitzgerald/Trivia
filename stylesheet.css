@@ -73,10 +73,10 @@ h4 {
     box-sizing: border-box;
 }
 
-.game-quiz-container{
+.gameQuizContainer{
     width: 40rem;
     height: 25rem;
-    background-color: rgb(92, 68, 68);
+    background-color: rgb(180, 147, 109);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ h4 {
     border-radius: 30px;
 }
 
-.game-details-container{
+.gameDetailsContainer{
     width: 80%;
     height: 4rem;
     display: flex;
@@ -93,11 +93,11 @@ h4 {
     align-items: center;
 }
 
-.game-details-container h1{
+.gameDetailsContainer h1{
     font-size: 1.2rem;
 }
 
-.game-question-container{
+.gameQuestionContainer{
     width: 80%;
     height: 8rem;
     display: flex;
@@ -107,13 +107,13 @@ h4 {
     border-radius: 25px;
 }
 
-.game-question-container h1{
+.gameQuestionContainer h1{
     font-size: 1.1rem;
     text-align: center;
     padding: 3px;
 }
 
-.game-options-container{
+.gameOptionsContainer{
     width: 80%;
     height: 12rem;
     display: flex;
@@ -122,7 +122,7 @@ h4 {
     justify-content: space-around;
 }
 
-.game-options-container span{
+.gameOptionsContainer span{
     width: 45%;
     height: 3rem;
     border: 2px solid rgb(0, 0, 0);
@@ -151,13 +151,13 @@ input[type=radio]:checked ~ .option {
     background: rgb(204, 175, 238);
 }
 
-.next-button-container{
+.nextButtonContainer{
     width: 50%;
     height: 3rem;
     display: flex;
     justify-content: center;
 }
-.next-button-container button{
+.nextButtonContainer button{
     width: 8rem;
     height: 2rem;
     border-radius: 10px;
@@ -168,11 +168,11 @@ input[type=radio]:checked ~ .option {
     cursor: pointer;
     outline: none;
 }
-.next-button-container button:hover{
+.nextButtonContainer button:hover{
     background-color: rgb(0, 0, 0);
 }
 
-.modal-container{
+.modalContainer{
     display: none;
     position: fixed;
     z-index: 1; 
@@ -181,16 +181,13 @@ input[type=radio]:checked ~ .option {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgb(0,0,0);  
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    -webkit-animation: fadeIn 1.2s ease-in-out;
-    animation: fadeIn 1.2s ease-in-out;
 }
 
-.modal-content-container{
+.modalContentContainer{
     height: 20rem;
     width: 25rem;
     background-color: rgb(43, 42, 42);
@@ -201,7 +198,7 @@ input[type=radio]:checked ~ .option {
     border-radius: 25px;
 }
 
-.modal-content-container h1{
+.modalContentContainer h1{
     font-size: 1.3rem;
     height: 3rem;
     color: lightgray;
@@ -222,7 +219,7 @@ input[type=radio]:checked ~ .option {
     text-align: center;
 }
 
-.modal-button-container{
+.modalButtonContainer{
     height: 2rem;
     width: 100%;
     display: flex;
@@ -230,7 +227,7 @@ input[type=radio]:checked ~ .option {
     justify-content: center;
 }
 
-.modal-button-container button{
+.modalButtonContainer button{
     width: 10rem;
     height: 2rem;
     background: none;
@@ -241,70 +238,70 @@ input[type=radio]:checked ~ .option {
     cursor: pointer;
     border-radius: 20px;
 }
-.modal-button-container button:hover{
+.modalButtonContainer button:hover{
     background-color: rgb(83, 82, 82);
 }
 
 
 /* Responsive display */
 @media(min-width : 300px) and (max-width : 350px){
-    .game-quiz-container{
+    .gameQuizContainer{
         width: 90%;
         height: 80vh;
      }
-     .game-details-container h1{
+     .gameDetailsContainer h1{
         font-size: 0.8rem;
      }
 
-     .game-question-container{
+     .gameQuestionContainer{
         height: 6rem;
      }
-     .game-question-container h1{
+     .gameQuestionContainer h1{
        font-size: 0.9rem;
     }
 
-    .game-options-container span{
+    .gameOptionsContainer span{
         width: 90%;
         height: 2.5rem;
     }
-    .game-options-container span label{
+    .gameOptionsContainer span label{
         font-size: 0.8rem;
     }
-    .modal-content-container{
+    .modalContentContainer{
         width: 90%;
         height: 25rem;
     }
 
-    .modal-content-container h1{
+    .modalContentContainer h1{
         font-size: 1.2rem;
     }
 }
 
 @media(min-width : 350px) and (max-width : 700px){
-   .game-quiz-container{
+   .gameQuizContainer{
        width: 90%;
        height: 80vh;
     }
-    .game-details-container h1{
+    .gameDetailsContainer h1{
         font-size: 1rem;
     }
 
-    .game-question-container{
+    .gameQuestionContainer{
         height: 8rem;
     }
 
-    .game-question-container h1{
+    .gameQuestionContainer h1{
         font-size: 0.9rem;
      }
 
-    .game-options-container span{
+    .gameOptionsContainer span{
         width: 90%;
     }
-    .modal-content-container{
+    .modalContentContainer{
         width: 90%;
         height: 25rem;
     }
-    .modal-content-container h1{
+    .modalContentContainer h1{
         font-size: 1.2rem;
     }
 }

@@ -249,11 +249,11 @@ const NextQuestion = (index) => {
     const currentQuestion = randomQuestions[index]
     /*document.getElementById("question-number").innerHTML = questionNumber
     document.getElementById("player-score").innerHTML = playerScore*/
-    document.getElementById("display-question").innerHTML = currentQuestion.question;
-    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
-    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
-    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
-    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+    document.getElementById("displayQuestion").innerHTML = currentQuestion.question;
+    document.getElementById("optionOneLabel").innerHTML = currentQuestion.optionA;
+    document.getElementById("optionTwoLabel").innerHTML = currentQuestion.optionB;
+    document.getElementById("optionThreeLabel").innerHTML = currentQuestion.optionC;
+    document.getElementById("optionFourLabel").innerHTML = currentQuestion.optionD;
 
 }
 
@@ -330,9 +330,9 @@ const unCheckbuttonButtons = () => {
 
 
 const handleEndGame = () => {
-    document.getElementById('wrong-answers').innerHTML = wrongAttempt
-    document.getElementById('right-answers').innerHTML = playerScore
-    document.getElementById('score-modal').style.display = "flex"
+    document.getElementById('wrongAnswers').innerHTML = wrongAttempt
+    document.getElementById('rightAnswers').innerHTML = playerScore
+    document.getElementById('scoreModal').style.display = "flex"
 
 }
 
@@ -343,7 +343,7 @@ const closeScoreModal = () => {
     indexNumber = 0
     randomQuestions = []
     NextQuestion(indexNumber)
-    document.getElementById('score-modal').style.display = "none"
+    document.getElementById('scoreModal').style.display = "none"
 }
 
 const closeOptionModal = () => {
